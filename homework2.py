@@ -1,8 +1,15 @@
-name = "Валерия"
-print(f"Name: {name}")
-age = 53
-print(f"Age: {age}")
-age += 1
-print(f"New age: {age}")
-is_student = True
-print(f"Is student: {is_student}")
+# Напишите 4 переменных которые буду обозначать следующие данные:
+# Количество выполненных ДЗ (запишите значение 12)
+# Количество затраченных часов (запишите значение 1,5)
+# Название курса (запишите значение 'Python')
+# Время на одно задание (вычислить используя 1 и 2 переменные)
+# Выведите на экран(в консоль), используя переменные, следующую строку:
+# Курс: Python, всего задач:10, затрачено часов: 1.5, среднее время выполнения 
+# 0,125 часа.
+completed_homework = 12
+hours_spent = 1.5
+course_name = 'Python'
+homework_time = completed_homework / hours_spent
+print(f"Курс: {course_name}, всего задач: {completed_homework}, "
+      f"затрачено часов: {hours_spent}, среднее время выполнения "
+      f"{homework_time} часа.")
