@@ -2,11 +2,11 @@ def password_(first_number):
   second_number = ""
   for i in range(1, first_number // 2 + 1):
     for j in range(i, first_number):
-      if (i != j) and (first_number % (i + j) == a0):
+      if (i != j) and (first_number % (i + j) == 0):
         second_number += str(i) + str(j)
   print("Your password is: ", second_number)
 
-first_number = int(input("Enter your first number: "))
+first_number = 0
 # проверка на корректность вводных данных
 while True:
   try:
