@@ -1,5 +1,3 @@
-#__len__(self) - должен возвращать кол-во этажей здания self.number_of_floors.
-#__str__(self) - должен возвращать строку: "Название: <название>, кол-во этажей: <этажи>".
 class House:
   def __init__(self, name, number_of_floors):
       self.name = name
