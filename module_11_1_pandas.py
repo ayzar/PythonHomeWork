@@ -1,5 +1,6 @@
 import pandas as pd
 
+
 # 1. Создание и просмотр DataFrame
 data = {
     'Name': ['Алиса', 'Никита', 'Рашид'],
