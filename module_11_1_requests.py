@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import csv
 import json
 
+
 # Функция для выполнения GET-запроса с обработкой ошибок
 def get_page_content(url):
     try:
