@@ -1,5 +1,6 @@
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
+
 # 1. Открытие и сохранение изображения
 image = Image.open('example.jpg')
 image.save('example_copy.png')  # Сохранение в другом формате
