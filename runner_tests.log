@@ -1,0 +1,2 @@
+2024-08-18 08:39:54,797 - WARNING - Неверный тип данных для объекта Runner: Name must be a string
+2024-08-18 08:39:54,798 - WARNING - Неверная скорость для Runner: Speed must be a non-negative value
