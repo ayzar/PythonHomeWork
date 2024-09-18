@@ -10,7 +10,7 @@ from aiogram.utils import executor
 from aiogram.utils.callback_data import CallbackData
 import os
 
-API_TOKEN = '6991918148:AAGK8X9t9ukY_Dvq_Z04JeSlsfOd0ShcsV0'
+API_TOKEN = 'BOT_API_TOKEN'
 
 # Включаем логирование
 logging.basicConfig(level=logging.INFO)
