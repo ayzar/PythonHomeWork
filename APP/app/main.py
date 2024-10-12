@@ -4,12 +4,12 @@ from fastapi import FastAPI
 from sqlalchemy.schema import CreateTable
 from app.models.user import User
 from app.models.task import Task
+from .routers import task, user
 
 # Добавляем путь к папке backend в sys.path
 sys.path.append(os.path.join(os.path.dirname(__file__), 'backend'))
+from app.backend.db import engine, Base
 
-from db import engine, Base
-from .routers import task, user
 
 # Вывод SQL-запросов для создания таблиц
 print(str(CreateTable(User.__table__)))
