@@ -1,0 +1,17 @@
+{% extends 'fourth_task/menu.html' %}
+
+{% block pagename %}Магазин семян{% endblock %}
+
+{% block content %}
+    <h1>Магазин семян</h1>
+    <ul>
+        {% for seed in семена %}
+            <li>
+                {{ seed }} - 150 руб. <!-- Установите цену или добавьте динамическое назначение -->
+                <button>Купить</button>
+            </li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a href="{% url 'home' %}">Вернуться на главную страницу</a>
+{% endblock %}
