@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин семян</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .seed-category {
+            margin: 20px 0;
+        }
+        .seed-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .seed-item h3 {
+            margin: 0;
+        }
+        .seed-item p {
+            margin: 5px 0;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Главная</a></li>
+            <li><a href="{% url 'shop' %}">Магазин</a></li>
+            <li><a href="{% url 'cart' %}">Корзина</a></li>
+        </ul>
+    </nav>
+    <h1>Магазин семян</h1>
+
+    {% for category, items in seeds.items %}
+        <div class="seed-category">
+            <h2>{{ category|capfirst }}</h2>
+            {% for item in items %}
+                <div class="seed-item">
+                    <h3>{{ item.name }}</h3>
+                    <p>Цена: {{ item.price }}</p>
+                    <p>{{ item.description }}</p>
+                    <a href="#" class="button">Купить</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+
+    <a href="{% url 'home' %}" class="button">Вернуться на главную</a>
+</body>
+</html>
