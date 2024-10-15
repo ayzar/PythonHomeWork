@@ -1,0 +1,10 @@
+{% extends 'task1/menu.html' %}
+
+{% block pagename %}Корзина{% endblock %}
+
+{% block content %}
+    <h1>Корзина</h1>
+    <p>Здесь будет информация о товарах в вашей корзине.</p>
+    <br>
+    <a href="{% url 'home' %}">Вернуться на главную страницу</a>
+{% endblock %}

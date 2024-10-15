@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+</head>
+<body>
+    <h2>Форма регистрации</h2>
+
+    <hr>
+
+    <!-- Вывод ошибок -->
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    <!-- Сообщение о регистрации -->
+    {% if message %}
+        <p style="color: green;">{{ message }}</p>
+    {% endif %}
+
+    <!-- Если форма передана как объект Django Forms -->
+    {% if form %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}  <!-- Отображение формы Django -->
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    {% endif %}
+</body>
+</html>
