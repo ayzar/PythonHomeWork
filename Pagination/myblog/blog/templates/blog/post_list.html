@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статьи</title>
+    <style>
+        .pagination {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .pagination a, .pagination span {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-decoration: none;
+        }
+        .pagination .current {
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Статьи</h1>
+
+    <!-- Форма выбора количества элементов на странице -->
+    <form method="get">
+        <label for="page_size">Постов на странице:</label>
+        <select name="page_size" id="page_size" onchange="this.form.submit()">
+            <option value="5" {% if page_size == '5' %}selected{% endif %}>5</option>
+            <option value="10" {% if page_size == '10' %}selected{% endif %}>10</option>
+            <option value="20" {% if page_size == '20' %}selected{% endif %}>20</option>
+        </select>
+    </form>
+
+    <ul>
+        {% for post in page_obj %}
+            <li>
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.content }}</p>
+                <p><em>{{ post.created_at }}</em></p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Кастомная пагинация -->
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page=1&page_size={{ page_size }}">&laquo; первый</a>
+            <a href="?page={{ page_obj.previous_page_number }}&page_size={{ page_size }}">предыдущий</a>
+        {% endif %}
+
+        <span class="current">
+            Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
+        </span>
+
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}&page_size={{ page_size }}">следующий</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}&page_size={{ page_size }}">последний &raquo;</a>
+        {% endif %}
+    </div>
+</body>
+</html>
